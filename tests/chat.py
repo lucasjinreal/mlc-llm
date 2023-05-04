@@ -173,6 +173,7 @@ def chat(model_wrapper, args):
 def get_tvm_model(args):
     device = tvm.device(args.device_name)
     const_params = utils.load_params(args.artifact_path, device)
+    print(f"{args.artifact_path}/{args.model}_{args.device_name}_{args.dtype}.so")
     ex = tvm.runtime.load_module(
         f"{args.artifact_path}/{args.model}_{args.device_name}_{args.dtype}.so"
     )
