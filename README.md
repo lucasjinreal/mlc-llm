@@ -1,5 +1,21 @@
 # MLC LLM
 
+Fork from official MLC LLM. Experiments shows MLC can be a potential LLM deploy backend compare with llama.cpp or other variants. It's fast and less dependencies.
+
+This fork mainly focus on test on Chinese support.
+
+Currently status:
+
+- [x] proof speed;
+- [ ] support for ChatGLM and MOSS;
+- [ ] python API and package integration;
+- [ ] windows support, maybe tutorial on that?
+
+
+
+-----------------------------
+# MLC LLM
+
 | [Project](https://mlc.ai/mlc-llm/) | [Blog](https://mlc.ai/blog/blog/2023/05/01/bringing-accelerated-llm-to-consumer-hardware) | [Demo: iOS](https://mlc.ai/mlc-llm/#iphone) | [Demo: CLI](https://mlc.ai/mlc-llm/#windows-linux-mac) | [WebLLM](https://mlc.ai/web-llm/) | [WebStableDiffusion](https://mlc.ai/web-stable-diffusion/) |
 
 MLC LLM is a **universal solution** that allows **any language models** to be **deployed natively** on a diverse set of hardware backends and native applications, plus a **productive framework** for everyone to further optimize model performance for their own use cases.
