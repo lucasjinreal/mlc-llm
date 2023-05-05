@@ -35,7 +35,8 @@ def _parse_args():
     args.add_argument("--max-gen-len", type=int, default=2048)
     args.add_argument("--run-torch-model", action="store_true", default=False)
     parsed = args.parse_args()
-    parsed.model_path = os.path.join(parsed.artifact_path, "models", parsed.model)
+    # parsed.model_path = os.path.join(parsed.artifact_path, "models", parsed.model)
+    parsed.model_path = os.path.join(parsed.artifact_path, parsed.model)
     parsed.artifact_path = os.path.join(
         parsed.artifact_path, parsed.model, parsed.dtype
     )
@@ -236,6 +237,7 @@ def main():
     ARGS = _parse_args()
     if ARGS.debug_dump:
         torch.manual_seed(12)
+    ARGS.model_path = ARGS.model_path.replace('\\', '/')
     tokenizer = AutoTokenizer.from_pretrained(ARGS.model_path, trust_remote_code=True)
     tokenizer.pad_token_id = tokenizer.eos_token_id
     if ARGS.model.startswith("dolly-"):

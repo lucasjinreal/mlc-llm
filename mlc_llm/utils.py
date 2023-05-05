@@ -129,7 +129,7 @@ def save_params(params: List[tvm.nd.NDArray], artifact_path: str) -> None:
 def load_params(artifact_path: str, device) -> List[tvm.nd.NDArray]:
     from tvm.contrib import tvmjs  # pylint: disable=import-outside-toplevel
 
-    params, meta = tvmjs.load_ndarray_cache(f"{artifact_path}/params", device)
+    params, meta = tvmjs.load_ndarray_cache(f"{artifact_path}", device)
     plist = []
     size = meta["ParamSize"]
     for i in range(size):
